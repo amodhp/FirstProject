@@ -1,14 +1,19 @@
 import React,{Component} from "react";
-import {View,Text,TextInput,StyleSheet} from 'react-native'
-import MainScreen from "./MainScreen";
-
-
+import MainScreen from "./components/MainScreen";
+import {Provider} from 'react-redux'
+import {createStore,applyMiddleware} from 'redux'
+import ReduxThunk from 'redux-thunk'
+import reducers from "./reducers";
 
 
 class App extends Component {
+   
     render(){
+        const store=createStore(reducers,{},applyMiddleware(ReduxThunk))
         return(
+            <Provider store={store}> 
             <MainScreen/>
+            </Provider>
         )
     }
 }
