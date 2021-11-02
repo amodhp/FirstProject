@@ -10,7 +10,7 @@ import {
 
 class Card extends Component {
   render() {
-    const {img, name} = this.props;
+    const {img, name,downloadDisplay,detailsOnPress} = this.props;
     const {downloadButton, text} = styles;
     return (
       <View style={styles.card}>
@@ -18,13 +18,15 @@ class Card extends Component {
         <View>
           <Text style={styles.text}>{name}</Text>
         </View>
-        <TouchableOpacity
+        {downloadDisplay && <TouchableOpacity
           style={downloadButton}
-          onPress={() => {
-            Alert.alert('Download has been pressed!');
-          }}>
-          <Text style={text}>Download</Text>
-        </TouchableOpacity>
+          // onPress={() => {
+          //   Alert.alert('Download has been pressed!');
+          // }}
+          onPress={detailsOnPress}
+          >
+          <Text style={text}>View Details</Text>
+        </TouchableOpacity>}
       </View>
     );
   }

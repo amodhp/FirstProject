@@ -19,9 +19,9 @@ class Spinner extends Component {
 const styles = StyleSheet.create({
   loadingBox: {
     backgroundColor: 'lightgrey',
-    flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
+    flex:1,
   },
   loadingCard: {
     backgroundColor: 'lightblue',
@@ -31,6 +31,8 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     borderRadius: 15,
     elevation: 10,
+    
+   
   },
 
   message: {
